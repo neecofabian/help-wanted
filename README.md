@@ -1,17 +1,16 @@
-# js-library-fabiann1
+# HelpWanted.js
 
-## HelpWanted.js
 `HelpWanted.js` is a library for creating website tours and tutorial modals. 
 It's time to rethink the Help button.
 
-Visit the website:
-https://helpwantedjs.herokuapp.com
-
+<img width="1701" alt="home-page" src="https://github.com/neecofabian/help-wanted/assets/48688155/1b33bd89-cb70-4730-93da-9581d4e09aaf">
+<img width="1701" alt="home-page-guided-mode" src="https://github.com/neecofabian/help-wanted/assets/48688155/179d7a61-ffd1-4035-978f-618c5c79e0ce">
+<img width="1701" alt="home-page-discovery-mode" src="https://github.com/neecofabian/help-wanted/assets/48688155/8818cef4-e002-4b53-b4d6-7806a7b3fb4a">
+<img width="1701" alt="doc-page-getting-started" src="https://github.com/neecofabian/help-wanted/assets/48688155/29039fa7-c0f7-4f3f-b00c-5b3895fdf21e">
+<img width="1701" alt="doc-page-api" src="https://github.com/neecofabian/help-wanted/assets/48688155/6a181305-c88c-4497-8288-0f597f248015">
+<img width="1701" alt="example-page-guided-mode" src="https://github.com/neecofabian/help-wanted/assets/48688155/92d4ca64-cc11-4f4f-97f8-ec4128ce2b43">
 
 ## Getting Started
-Read the library's full documentation here:
-https://helpwantedjs.herokuapp.com/html/docs.html
- 
 `HelpWanted.js` does not rely on external libraries, so only the following must be included inside the HTML `<head>`:
 ```
 <script defer type="text/javascript" src="helpwanted/helpwanted.js"></script>
@@ -54,3 +53,6 @@ dModeBtn.addEventListener("click", () => {
 
 These steps highlight the key steps needed to work with `HelpWanted.js`.
 ![logo](https://github.com/csc309-fall-2021/js-library-fabiann1/blob/main/pub/images/helpwanted-logo.svg "HelpWanted.js logo")
+
+
+
