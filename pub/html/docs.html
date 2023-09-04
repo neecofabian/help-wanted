@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Documentation</title>
+        <link rel="shortcut icon" type="image/png" href="../favicon.png">
+        <script defer type="text/javascript" src="../helpwanted/helpwanted.js"></script>
+        <link rel="stylesheet" type="text/css" href="../helpwanted/helpwanted.css">
+        <script defer type="text/javascript" src='../js/docs.js'></script>
+        <link rel="stylesheet" type="text/css" href="../css/docs.css">
+    </head>
+    <body>
+        <ul id="navbar">
+            <li><button id="navBtn0" class="navbarButton" onclick="window.location='../examples.html';"><img id="smallLogo"src="../images/helpwanted-favicon.svg"></img></button></li>
+            <li><button id="navBtn-1" class="navbarButton" onclick="window.location='../examples.html';"><h3>Home</h3></button></li>
+            <li><button id="navBtn1" class="navbarButton" onclick="window.location='../html/docs.html';"><h3>Documentation</h3></button></li>
+            <li><button id="navBtn2" class="navbarButton" onclick="window.location='../html/game-example.html';"><h3>Application</h3></button></li>
+            <li><button id="navBtn3" class="navbarButton"><h3>Repository</h3></button></li>
+        </ul>
+
+        <div id="gettingStarted">
+            <h2 id="gettingStartedTitle">Getting Started with HelpWanted.js</h2>
+            <span class="mono">HelpWanted.js</span> does not rely on external libraries, so only the following must be included inside the HTML <span class="mono">&lt;head&gt;</span>
+            <div class="mono codeBlock">
+                &lt;script defer type="text/javascript" src="<b>helpwanted/helpwanted.js</b>"&gt;&lt;/script&gt;<br>
+                &lt;link rel="stylesheet" type="text/css" href="<b>helpwanted/helpwanted.css</b>"&gt;
+            </div>
+
+            Once imported, create a SequenceList and your first Sequence object in JavaScript.
+            <div class="mono codeBlock">
+                const sl = new SequenceList()<br>
+                const s = new Sequence()
+            </div>
+
+            Now, decide on what HTML element to attach a pin to. Then, create the HTML elements that will be the content of the pins. Place the items in wrapper divs as needed because only one element can be passed as <span class="mono">content</span> into <span class="mono">addPin(content, element, position)</span>.
+            Here's one way to do it:
+            <div class="mono codeBlock">
+                const element = document.querySelector('#gettingStarted')<br>
+                const content = document.createElement('div')<br>
+                content.innerHTML = "This is my first pin!"<br>
+            </div>
+
+            Place the pin at the bottom of <span class="mono">element</span>. After adding all desired pins into the sequence, add the sequence to the sequence list. Let's stick to one pin for now.
+            <div class="mono codeBlock">
+                s.addPin(content, element, "bottom")<br>
+                sl.addSequence(s)<br>
+            </div>
+
+            Finally, we need a way to trigger Guided and Discovery modes. Buttons can call the appropriate method per mode and then pass 0 to <span class="mono">start()</span>, since sequence <span class="mono">s</span> is first on the <span class="mono">SequenceList</span>. Give it a try!
+
+            <div class="mono codeBlock">
+                const gModeBtn = document.querySelector('#gModeBtn')<br>
+                gModeBtn.addEventListener("click", () => {<br>
+                    <span class="indent"></span>sl.discoveryModeOff(0)<br>
+                    <span class="indent"></span>sl.start(0) })<br>
+                <br>
+                const dModeBtn = document.querySelector('#dModeBtn')<br>
+                dModeBtn.addEventListener("click", () => {<br>
+                    <span class="indent"></span>sl.discoveryModeOn(0)<br>
+                    <span class="indent"></span>sl.start(0) })<br>
+            </div>
+            
+            <div class="demoBtnsWrapper">
+                <div class="demoBtns">
+                    <button class="demoBtn" id="gModeBtn"><b>Guided Mode</b></button>
+                    <button class="demoBtn" id="dModeBtn"><b>Discovery Mode</b></button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="apiContent">
+            <h2>HelpWanted.js API</h2>
+
+            <h3 class="moreTopSpace">Constructors</h3>
+            <div class="apiElem">
+                <span class="mono bold"><span class="red">SequenceList</span>(styles={})</span>
+                <ul>
+                    <li>- Creates a new <span class="mono">SequenceList</span> object with specified style, if provided.</li>
+                    <li>- <span class="mono">styles</span> is an optional JavaScript object containing CSS values. Example and default:</li>
+                    <p class="mono codeBlock">
+                        {<br>
+                            <span class="indent"></span>opacity: 0.75,<br>
+                            <span class="indent"></span>tint: "#121212"<br>
+                        }<br>
+                    </p>
+                    where <span class="mono">tint</span> is the color of the background overlay in Discovery Mode.
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold"><span class="red">Sequence</span>(discoveryMode=false, darkenBackground=true, styles={})</span>
+                <ul>
+                    <li>- Creates a new <span class="mono">Sequence</span> object with specified style, if provided.</li>
+                    <li>- <span class="mono">discoveryMode</span> is a boolean indicating if Discovery Mode is shown when  <span class="mono">Sequence.prototype.start()</span> is called</li>
+                    <li>- <span class="mono">darkenBackground</span> is a boolean that makes the overlay in Discovery Mode visible if true.
+                    <li>- <span class="mono">styles</span> is an optional JavaScript object containing CSS values. Example and default:</li>
+                    <p class="mono codeBlock">
+                        {<br>
+                            <span class="indent"></span>backgroundColor: "white",<br>
+                            <span class="indent"></span>textColor: "#4b4b4b",<br>
+                            <span class="indent"></span>buttonBorderColor: "lightgray",<br>
+                            <span class="indent"></span>borderRadius: "14px"<br>
+                            <span class="indent"></span>highlightColor: "white",<br>
+                        }<br>
+                    </p>
+                    where <span class="mono">highlightColor</span> is the colour of the outline around the element being hovered over in Discovery Mode.<br>
+                </ul>
+            </div>
+            <br>
+
+
+            <h3 class="moreTopSpace">SequenceList Instance Properties</h3>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">currSequence</span></span>
+                <ul>
+                    <li>- An integer representing the index of the currently-running sequence in <span class="mono">this.sequences</span>.</p></li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">sequences</span></span>
+                <ul>
+                    <li>- A list containing <span class="mono">Sequence</span> objects added to the <span class="mono">SequenceList</span></li>
+                </ul>
+            </div>
+            <br>
+
+            <h3 class="moreTopSpace">Sequence Instance Properties</h3>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">pins</span></span>
+                <ul>
+                    <li>- A list containing <span class="mono">Pin</span> objects in this sequence.</p></li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">numPins</span></span>
+                <ul>
+                    <li>- An integer indicating how many <span class="mono">Pin</span> objects are in <span class="mono">this.pins</span></li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">currPin</span></span>
+                <ul>
+                    <li>- An integer indicating the index of the current <span class="mono">Pin</span> being used.</p></li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">discoveryMode</span></span>
+                <ul>
+                    <li>- A boolean indicating if Discovery Mode should turned on when the sequence starts.</p></li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">darkenBackground</span></span>
+                <ul>
+                    <li>- A boolean indicating if the overlay should be darkened when in Discovery Mode.</p>
+                </ul>
+            </div>
+            <br>
+
+
+            <h3 class="moreTopSpace">SequenceList Instance Methods</h3>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">next</span>()</span>
+                <ul>
+                    <li>- Show the next element in current <span class="mono">Sequence</span>, if it exists.</li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">back</span>()</span>
+                <ul>
+                    <li>- Show the previous element in current <span class="mono">Sequence</span>, if it exists.</li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">start</span>(sNum)</span>
+                <ul>
+                    <li>- Starts the <span class="mono">sNum</span>th sequence in the specified index based on its private variables (Guided or Discovery), only if no other sequence is running.</li>
+                </ul>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">stop</span>()</span>
+                <ul>
+                    <li>- Stops the sequence that is currently running.</li>
+                </ul>
+            </div>
+            <br>
+            
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">discoveryModeOn</span>(sNum)</span>
+                <ul>
+                    <li>- Enables Discovery Mode when the <span class="mono">sNum</span>th sequence is started.</p></li>
+                </ul>
+                </div>
+            <div class="apiElem">
+                <span class="mono bold">SequenceList.prototype.<span class="red">discoveryModeOff</span>(sNum)</span>
+                <ul>
+                    <li>- Enables Guided Mode when the <span class="mono">sNum</span>th sequence is started.</li>
+                </ul>
+            </div>
+            <br>
+
+            <h3 class="moreTopSpace">Sequence Instance Methods</h3>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">addPin</span>(content, element, position="bottom”, title="")</span>
+                <ul>
+                    <li>- Adds a pin containing the HTML element <span class="mono">content</span> on the <span class="mono">position</span> side of HTML element <span class="mono">element</span>.</li>
+                    <li>- <span class="mono">position</span> is one of 
+                        <span class="mono">"top"</span>, 
+                        <span class="mono">"bottom"</span> (default), 
+                        <span class="mono">"left"</span> or, 
+                        <span class="mono">"right"</span>.
+                    </li>
+                    <li>- <span class="mono">title</span> is the optional title of the pin.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="apiElem">
+                <span class="mono bold">Sequence.prototype.<span class="red">removePin</span>(pinNum)</span>
+                <ul>
+                    <li>- Removes the pin at index <span class="mono">pinNum</span> if it exists.</p></li>
+                    </ul>
+            </div>
+            <br>
+        </div>
+    </body>
+</html>

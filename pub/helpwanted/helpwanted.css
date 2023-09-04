@@ -1,0 +1,129 @@
+.pinElem {
+  display: inline-block;
+  padding: 1.25em;
+  margin: 0.4em;
+  border-radius: 14px;
+  background: white;
+  position: absolute;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1),
+    0px 0px 6px 0.5px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: ease 0.3s;
+  z-index: 20;
+}
+
+.pinElem.visible {
+  opacity: 1;
+}
+
+.pinFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #4b4b4b;
+  margin-top: 0.75em;
+}
+
+.pinProgressIndicator {
+  margin: 0;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.pinBtnBack,
+.pinBtnNext,
+#overlayCloseBtn {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  transition: ease 0.15s;
+}
+
+.pinBtnBack:hover,
+.pinBtnNext:hover,
+#overlayCloseBtn:hover {
+  filter: brightness(80%);
+}
+
+.pinBtnDisabled,
+.pinBtnDisabled:hover {
+  cursor: default;
+  filter: brightness(90%);
+  background: #f7f6f6;
+}
+
+.pinBtnBack {
+  margin-right: 0.35em;
+}
+
+.pinBtnNext {
+  margin-left: 0.35em;
+  margin-right: 1em;
+}
+
+.highlightElement {
+  z-index: 10;
+  position: relative;
+  transition: ease 0.1s;
+}
+
+.highlightElement:hover {
+  cursor: pointer;
+  outline: 4px solid white;
+}
+
+.pinDMode {
+  opacity: 0;
+}
+
+.pinDMode:hover {
+  opacity: 1;
+}
+
+#overlay {
+  position: fixed;
+  background: rgb(18, 18, 18);
+  opacity: 75%;
+  margin: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+
+#overlayCloseBtn {
+  position: absolute;
+  z-index: 30;
+  top: 15px;
+  right: 15px;
+}
+
+.escMessage {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  z-index: 200;
+  padding: 10px 25px;
+  border-radius: 10px;
+  opacity: 90%;
+  transition: opacity 2s ease;
+}
+
+.pinTitle {
+  margin-right: 15px;
+}

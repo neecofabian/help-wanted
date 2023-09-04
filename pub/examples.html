@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HelpWanted.js</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <script defer type="text/javascript" src="helpwanted/helpwanted.js"></script>
+    <link rel="stylesheet" type="text/css" href="helpwanted/helpwanted.css">
+    <script defer type="text/javascript" src='examples.js'></script>
+    <link rel="stylesheet" type="text/css" href="examples.css">
+ </head>
+ <body>
+    <ul id="navbar">
+        <li><button id="navBtn0" class="navbarButton" onclick="window.location='examples.html';"><img id="smallLogo"src="images/helpwanted-favicon.svg"></img></button></li>
+        <li><button id="navBtn-1" class="navbarButton" onclick="window.location='examples.html';"><h3>Home</h3></button></li>
+        <li><button id="navBtn1" class="navbarButton" onclick="window.location='html/docs.html';"><h3>Documentation</h3></button></li>
+        <li><button id="navBtn2" class="navbarButton" onclick="window.location='html/game-example.html';"><h3>Application</h3></button></li>
+        <li><button id="navBtn3" class="navbarButton"><h3>Repository</h3></button></li>
+    </ul>
+
+    <div class="bigContainer">
+        <div id="sidebar">
+            <img id="helpwantedLogo" src="images/helpwanted-logo.svg" alt="HelpWanted logo">
+            <div id="whatItDoes" class="sidebarContent">
+                <h2>Rethink the <em>Help</em> Button</h2>
+                <p><span class="mono bold">HelpWanted.js</span> is a library for creating website tours
+                        and tutorial modals.</p>
+            </div>
+            <div id="sideBarGuidedModeDiv" class="sidebarContent">
+                <div class="sidebarContentHeader">
+                    <h2>Guided Mode</h2>
+                    <button id="guidedModeBtn"><b>Start Demo Tour</b></button>
+                </div>
+                
+                <p>Users navigate through an ordered tour of elements on the webpage.</p>
+            </div>
+            <div id="sideBarDiscoveryModeDiv" class="sidebarContent">
+                <div class="sidebarContentHeader">
+                    <h2>Discovery Mode</h2>
+                    <button id="discoveryModeBtn"><b>See Annotations</b></button>
+                </div>
+
+                <p>Specific elements on the page are highlighted for users to hover and learn about.</p>
+            </div>
+        </div>
+
+        <div id="rightContainer">
+
+            <div id="whatsNew">
+                <h2>What's New in Version 2?</h2>
+                <div id="whatsNewContent"class="whatsNewElem">
+                    Under the hood: all global variables are now tied to an object.
+                </div>
+                <div class="whatsNewElem">
+                    Major bug fix for issue where some pins were not visible.
+                </div>
+                <div class="whatsNewElem">
+                    Auto scroll so that the current step in Guided Mode is always visible.
+                </div>
+                <div class="whatsNewElem">
+                    Auto scroll in Discovery Mode when the hovered element's pin is outside the viewport.
+                </div>
+                <div class="whatsNewElem">
+                    Optional titles for each pin.
+                </div>
+                <div class="whatsNewElem">
+                    'Press ESC to exit' disappearing alert in Discovery Mode.
+                </div>
+                <div class="whatsNewElem">
+                    Customize the Discovery Mode background overlay: opacity, tint colour
+                </div>
+                <div id="chosen11" class="whatsNewElem">
+                    Customize the pin's appearance:
+                    <ul> 
+                        <li>- Background colour</li>
+                        <li>- Text colour</li>
+                        <li>- Border radius</li>
+                        <li>- Button border colour</li>
+                        <li>- Discovery Mode element highlight colour</li>
+                    </ul>
+                </div>
+                <div class="whatsNewElem">
+                    And a partridge in a pear tree.
+                </div>
+            </div>
+
+            <div id="progress">
+                <h2>View the Progress</h2>
+                <span class="links">
+                    <a class="link" id="initialProposal" href="files/309_HelpWanted_Proposal.pdf" target="_blank">Initial Proposal</a>
+                    <a class="link" href="files/309_HelpWanted_Alpha.pdf" target="_blank">Alpha Release</a>
+                </span>
+            </div>
+
+            <div id="codeBox">
+                <h2 id="demoTitle">Making this Demo</h2>
+                For a step-by-step walkthrough of a simple example, go to the Documentation tab. Sections that do not use the library have been ommitted for brevity.
+                <div class="code mono">
+                    const sl = new SequenceList({opacity: 0.7, tint: "#121212"})<br>
+                    const s = new Sequence(false, true)<br>
+                    <br>
+                    s.addPin(content1, elem1, "bottom", "Introduction")<br>
+                    s.addPin(content2, elem2, "bottom", "Progress")<br>
+                    s.addPin(content3, elem3, "bottom", "Exit")<br>
+                    s.addPin(content4, elem4, "top", "Scrolling")<br>
+                    s.addPin(content5, elem5, "right")<br>
+                    s.addPin(content6, elem6, "left")<br>
+                    s.addPin(content7, elem7, "right", "Discovery")<br>
+                    s.addPin(content8, elem8, "right", "Reusability")<br>
+                    s.addPin(content9, elem9, "bottom", "Elements")<br>
+                    s.addPin(content10, elem10, "top")<br>
+                    s.addPin(content11, elem11, "bottom", "Conclusion")<br>
+                    <br>
+                    sl.addSequence(s)<br>
+                    guidedModeBtn.addEventListener("click", () => {<br>
+                        <span class=indent></span>sl.discoveryModeOff(0)<br>
+                        <span class=indent></span>sl.start(0)<br>
+                    })<br>
+                    <br>
+                    discoveryModeBtn.addEventListener("click", () => {<br>
+                        <span class=indent></span>sl.discoveryModeOn(0)<br>
+                        <span class=indent></span>sl.start(0)<br>
+                    })<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </body>
+
+</html>

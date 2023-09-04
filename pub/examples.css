@@ -1,0 +1,240 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 150%;
+  color: rgb(91, 91, 91);
+  background-color: #f0fbff;
+  margin: 0;
+}
+
+h2 {
+  margin: 5px 0 5px 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button:hover,
+button:active {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: cousine;
+  src: url(fonts/Cousine-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: cousine;
+  src: url(fonts/Cousine-Bold.ttf);
+  font-weight: bold;
+}
+
+.mono {
+  font-family: "cousine", monospace;
+}
+
+.mono.bold {
+  font-weight: bold;
+}
+
+.moreTopSpace {
+  margin-top: 15px;
+}
+
+/* Colour Constants (All Hex Codes)
+    Red
+    EA5753
+    FF9288
+
+    Blue
+    82C8E2
+    A4D7EC
+
+    Yellow
+    F5EEA5
+    FFFEC3
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+.bigContainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+#sidebar {
+  max-width: 28vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #f5eea5;
+}
+
+#helpwantedLogo {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.sidebarContent {
+  margin-top: 15px;
+  background: #fffec3;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.sidebarContentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sidebarContent button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ea5753;
+  color: white;
+}
+
+.sidebarContent button:hover {
+  background: #ff9288;
+}
+
+.sidebarContent button:active {
+  background: #ffa69e;
+}
+
+#rightContainer {
+  flex: 1;
+}
+
+#navBtn0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#navBtn0:hover {
+  background: #83cae4;
+}
+
+#navBtn-1 {
+  background: rgb(160, 227, 250);
+}
+
+#navbar {
+  flex: 1;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding: 0 0 0 25px;
+  background: #82c8e2;
+}
+
+#smallLogo {
+  width: 35px;
+  margin-top: 5px;
+}
+
+.navbarButton {
+  padding: 15px 25px;
+  background: #82c8e2;
+  border: none;
+  border-radius: 13px;
+  color: rgb(91, 91, 91);
+  letter-spacing: 1px;
+}
+
+.navbarButton:hover {
+  background: #fffec3;
+}
+
+.navbarButton:active {
+  background: #fffedb;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+#progress,
+#whatsNew,
+#codeBox {
+  background: #a4d7ec;
+  padding: 25px;
+  border-radius: 25px;
+  margin: 30px auto;
+  max-width: 45vw;
+}
+
+.whatsNewElem {
+  background: white;
+  border-radius: 15px;
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.indent {
+  margin-left: 25px;
+}
+
+.content {
+  max-width: 300px;
+  display: inline-block;
+}
+
+#progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  background: #f5eea5;
+  color: rgb(91, 91, 91);
+  margin-left: 20px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.link:hover {
+  background: #faf6cd;
+}
+
+.code {
+  background: #fcfbd7;
+  border-radius: 15px;
+  padding: 10px 0 10px 15px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+#whatsNewTitle {
+  display: inline-block;
+}
+
+#demoTitle {
+  margin-bottom: 15px;
+}

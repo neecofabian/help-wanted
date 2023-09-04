@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Game Example</title>
+        <link rel="shortcut icon" type="image/png" href="../favicon.png">
+        <script defer type="text/javascript" src="../helpwanted/helpwanted.js"></script>
+        <link rel="stylesheet" type="text/css" href="../helpwanted/helpwanted.css">
+        <script defer type="text/javascript" src='../js/game-example.js'></script>
+        <link rel="stylesheet" type="text/css" href="../css/game-example.css">
+    </head>
+    <body>
+        <div class="container">
+            <ul id="navbar">
+                <li><button id="navBtn0" class="navbarButton" onclick="window.location='../examples.html';"><img id="smallLogo"src="../images/helpwanted-favicon.svg"></img></button></li>
+                <li><button id="navBtn-1" class="navbarButton" onclick="window.location='../examples.html';"><h3>Home</h3></button></li>
+                <li><button id="navBtn1" class="navbarButton" onclick="window.location='../html/docs.html';"><h3>Documentation</h3></button></li>
+                <li><button id="navBtn2" class="navbarButton" onclick="window.location='../html/game-example.html';"><h3>Application</h3></button></li>
+                <li><button id="navBtn3" class="navbarButton"><h3>Repository</h3></button></li>
+            </ul>
+
+            <div id="c1" class="circle"></div>
+            <div id="c2" class="circle"></div>
+            <div id="c3" class="circle"></div>
+            <div id="c4" class="circle"></div>
+            <div id="c5" class="circle"></div>
+            <div id="c6" class="circle"></div>
+            <div id="c7" class="circle"></div>
+            <div id="c8" class="circle"></div>
+
+            <div id="score">
+                <h3>SCORE <b class="mono">&nbsp6,053</b></h3>
+            </div>
+
+            <div id="leaderboard">
+                <h2>Leaderboard</h2>
+                <div class="leaderboardContent">
+                    <ol id="leaderboardPeople" class="mono">
+                        <li>hOOligan</li>
+                        <li>pied_piper</li>
+                        <li>bighead</li>
+                        <li>harmonica</li>
+                        <li>rich_hx</li>
+                        <li>3rlich</li>
+                        <li>gil&din</li>
+                        <li>hotdogornot</li>
+                        <li>tres,,,</li>
+                        <li>alwaysblue</li>
+                    </ol>
+                    <ul id="leaderboardScores" class="mono">
+                        <b>
+                            <li>27 038</li>
+                            <li>26 540</li>
+                            <li>19 944</li>
+                            <li>19 775</li>
+                            <li>18 023</li>
+                            <li>15 231</li>
+                            <li>14 839</li>
+                            <li>12 304</li>
+                            <li>&nbsp9 023</li>
+                            <li>&nbsp7 623</li>
+                        </b>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="healthbar">
+                <h2>Health</h2>
+                <div class="healthbarOutside">
+                    <div class="healthbarInside"></div>
+                </div>
+            </div>
+
+            <ul id="menu">
+                <li class="menuBtn"><button id="helpBtn"><img id="qmarkBtn" src="../images/qmark.png"></img></button></li>
+                <li class="menuBtn"><img id="profileBtn" src="../images/person.png"></img></li>
+                <li class="menuBtn"><img id="settingsBtn" src="../images/cog.png"></img></li>
+                <li class="menuBtn"><img id="playBtn" src="../images/play.png"></img></li>
+            </ul>
+
+            <div id="centerInfo">
+                <h2 id="centerInfoTitle">Game Tutorials: An Applied Example</h2>
+                <span class="mono">HelpWanted.js</span> is perfect for introductory tutorials in browser games. 
+                Press the <span class="mono">?</span> Help button to start the mock tutorial. 
+                To create this, HTML elements were made for the content of the pins. 
+                After, the elements that the pins will be pinned to were obtained.
+                Scroll down to read how <span class="mono">HelpWanted.js</span> comes in:
+                <div>&nbsp</div>
+
+
+                <!-- NOTE TO TA: This part is messy because I'm indenting in different levels using CSS. -->
+                <span class="mono code">
+                    <span class="comment">// Create SequenceList and Sequence objects. Notice the optional styling objects used.</span><br>
+                    const sl = new SequenceList({opacity: 0.6, tint: "#21292c"})<br>
+                    const s = new Sequence(false, true, {<br>
+                        <span class="indent"></span><span class="indent"></span>backgroundColor: "#536a72",<br>
+                        <span class="indent"></span><span class="indent"></span>textColor: "white",<br>
+                        <span class="indent"></span><span class="indent"></span>buttonBorderColor: "#c9c9c9",<br>
+                        <span class="indent"></span><span class="indent"></span>highlightColor: "#c9c9c9",<br>
+                        <span class="indent"></span><span class="indent"></span>borderRadius: "10px"<br>
+                        <span class="indent"></span>})<br>
+                    <br>
+                    <span class="comment">// Indicate the HTML content for each pin, where to attach the pin, and the optional title.</span><br>
+                    s.addPin(content1, helpBtn, "right", "Need Help?")<br>
+                    s.addPin(content2, profileBtn, "right", "Profile")<br>
+                    s.addPin(content3, settingsBtn, "right", "Settings")<br>
+                    s.addPin(content4, playBtn, "right", "Play")<br>
+                    s.addPin(content5, healthbar, "top", "Health")<br>
+                    s.addPin(content6, leaderboard, "left", "Leaderboard")<br>
+                    s.addPin(content7, score, "right", "Score")<br>
+                    s.addPin(content8, center, "top", "Conclusion")<br>
+                    <br>
+                    <span class="comment">// Remember to add the Sequence to the SequenceList.</span><br>
+                    sl.addSequence(s)<br>
+                    <br>
+                    <span class="comment">// Trigger Guided Mode when the Help Button is pressed.</span><br>
+                    helpBtn.addEventListener("click", () => {<br>
+                        <span class="indent"></span>    sl.discoveryModeOff(0)<br>
+                        <span class="indent"></span>    sl.start(0)<br>
+                    })<br>
+                </span>
+            </div>
+
+        </div>
+    </body>
+
+</html>

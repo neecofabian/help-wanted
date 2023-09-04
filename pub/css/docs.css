@@ -1,0 +1,173 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 150%;
+  color: rgb(91, 91, 91);
+  background-color: #f0fbff;
+  margin: 0;
+}
+
+@font-face {
+  font-family: cousine;
+  src: url(../fonts/Cousine-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: cousine;
+  src: url(../fonts/Cousine-Bold.ttf);
+  font-weight: bold;
+}
+
+.mono {
+  font-family: "cousine", monospace;
+}
+
+.mono.bold {
+  font-weight: bold;
+}
+
+h2 {
+  margin: 5px 0 5px 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 25px;
+  text-decoration: dotted;
+}
+
+button:hover,
+button:active {
+  cursor: pointer;
+}
+
+.moreTopSpace {
+  margin-top: 15px;
+}
+
+#gettingStarted,
+#apiContent {
+  background: #a4d7ec;
+  padding: 25px 25px 0 25px;
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+.apiElem {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.indent {
+  margin-left: 40px;
+}
+
+.codeBlock {
+  background: #fcfbd7;
+  border-radius: 15px;
+  padding: 10px 0 10px 15px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.red {
+  color: #ea5753;
+}
+
+.content {
+  max-width: 300px;
+  display: inline-block;
+}
+
+#navBtn0:hover {
+  background: #82c8e2;
+}
+
+#navBtn1 {
+  background: rgb(160, 227, 250);
+}
+
+#navbar {
+  flex: 1;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding: 0 0 0 25px;
+  background: #82c8e2;
+}
+
+#smallLogo {
+  width: 35px;
+  margin-top: 5px;
+}
+
+.navbarButton {
+  padding: 0px 25px;
+  background: #82c8e2;
+  border: none;
+  border-radius: 13px;
+  color: rgb(91, 91, 91);
+  letter-spacing: 1px;
+}
+
+.navbarButton:hover {
+  background: #fffec3;
+  cursor: pointer;
+}
+
+.navbarButton:active {
+  background: #fffedb;
+}
+
+#gettingStarted {
+  padding: 25px;
+  margin-top: 30px;
+  background: #ff9288;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgb(75, 74, 74);
+}
+
+#gettingStartedTitle {
+  margin-bottom: 15px;
+}
+
+.demoBtnsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.demoBtns {
+  display: inline-block;
+  margin: 10px auto 0 auto;
+}
+
+.demoBtn {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #82c8e2;
+  color: rgb(88, 88, 88);
+}
+
+.demoBtn:hover {
+  background: #87d0eb;
+}
+
+.demoBtn:active {
+  background: #a2e6ff;
+}
