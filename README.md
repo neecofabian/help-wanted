@@ -3,6 +3,8 @@
 `HelpWanted.js` is a library for creating website tours and tutorial modals. 
 It's time to rethink the Help button.
 
+To view the website below, run `examples.html`. To use the library, skip to [Getting Started](#getting-started).
+
 <img width="1701" alt="home-page" src="https://github.com/neecofabian/help-wanted/assets/48688155/1b33bd89-cb70-4730-93da-9581d4e09aaf">
 <img width="1701" alt="home-page-guided-mode" src="https://github.com/neecofabian/help-wanted/assets/48688155/179d7a61-ffd1-4035-978f-618c5c79e0ce">
 <img width="1701" alt="home-page-discovery-mode" src="https://github.com/neecofabian/help-wanted/assets/48688155/8818cef4-e002-4b53-b4d6-7806a7b3fb4a">

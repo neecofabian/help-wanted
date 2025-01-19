@@ -1,7 +1,7 @@
 'use strict'
 
 const repoBtn = document.querySelector('#navBtn3')
-repoBtn.addEventListener('click', () => window.open('https://github.com/csc309-fall-2021/js-library-fabiann1'))
+repoBtn.addEventListener('click', () => window.open('https://github.com/neecofabian/help-wanted'))
 
 
 // Create content elements, obtain existing element, and the DOM
